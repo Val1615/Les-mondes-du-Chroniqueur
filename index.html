@@ -1384,6 +1384,44 @@ body::before{opacity:.55;background-size:72px 72px}
   .gateway-card{min-height:auto}
 }
 
+
+/* v30 — guidage, respiration et couleurs par catégorie */
+body{
+  background:
+    radial-gradient(circle at 18% 0%,rgba(103,79,178,.18),transparent 34rem),
+    radial-gradient(circle at 82% 12%,rgba(216,182,109,.12),transparent 38rem),
+    linear-gradient(180deg,#05070d 0%,#090d16 34%,#070a11 100%);
+}
+.section{padding-top:clamp(3.2rem,6vw,5.5rem);padding-bottom:clamp(3rem,5.5vw,5rem)}
+.section::before{content:'';display:block;width:min(92px,22vw);height:3px;border-radius:999px;background:linear-gradient(90deg,var(--section-accent, var(--gold)), transparent);margin:0 0 1.1rem;opacity:.8}
+.section-head-compact{margin-bottom:1.1rem}
+.hero{padding:.35rem 0 1.1rem}
+.hero-visual{min-height:72vh;border-radius:34px;overflow:hidden;background:#03050a;box-shadow:0 22px 90px rgba(0,0,0,.55)}
+.hero-visual::after{background:linear-gradient(90deg,rgba(5,7,13,.62) 0%,rgba(5,7,13,.22) 42%,rgba(5,7,13,.08) 100%)}
+.hero-content{min-height:72vh;align-items:flex-end;justify-content:flex-start;padding:clamp(.75rem,2vw,1.25rem)}
+.hero-card-v30{max-width:min(520px,88vw);padding:clamp(.9rem,2vw,1.2rem);border-radius:24px;background:linear-gradient(180deg,rgba(8,12,22,.48),rgba(8,12,22,.62));border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(8px);box-shadow:0 18px 60px rgba(0,0,0,.28)}
+.hero-card-v30 h1{font-size:clamp(1.8rem,4.2vw,3.65rem);line-height:1;max-width:12ch;margin:.1rem 0 0}
+.hero-card-v30 .lead{font-size:.92rem;line-height:1.5;max-width:33rem;margin:.72rem 0 0;color:rgba(244,238,225,.88)}
+.hero-card-v30 .hero-note{font-size:.76rem;max-width:30rem;opacity:.8;margin:.55rem 0 0}
+.hero-card-v30 .btn{min-height:36px;padding:0 .72rem;font-size:.8rem}
+.visit-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;margin:0 0 1rem}
+.visit-path a{display:grid;grid-template-columns:auto 1fr;gap:.55rem .7rem;align-items:center;padding:.8rem .9rem;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.022));border:1px solid rgba(255,255,255,.08);text-decoration:none;color:var(--text);transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.visit-path a:hover{transform:translateY(-2px);border-color:rgba(216,182,109,.32);background:rgba(216,182,109,.07)}
+.visit-path span{grid-row:span 2;display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:color-mix(in srgb,var(--section-accent, var(--gold)) 22%,transparent);border:1px solid color-mix(in srgb,var(--section-accent, var(--gold)) 35%,transparent);font-size:.72rem;color:#fff}
+.visit-path strong{font-size:.92rem}.visit-path small{color:var(--muted);font-size:.76rem}
+.gateway-grid-v30{grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.gateway-grid-v30 .gateway-card{min-height:auto;padding:.95rem;border-radius:22px}
+.gateway-grid-v30 .gateway-card span{font-size:1.25rem}.gateway-grid-v30 .gateway-card h3{font-size:1rem}.gateway-grid-v30 .gateway-card p{font-size:.84rem;line-height:1.45}
+.update-note-v30{margin-top:-1.3rem;margin-bottom:1rem;opacity:.88}.update-note-v30 .panel{padding:.9rem 1rem}.update-note-v30 p{font-size:.86rem;line-height:1.5}
+#univers{--section-accent:var(--cat-univers)}#carte{--section-accent:var(--cat-carte)}#personnages{--section-accent:var(--cat-personnages)}#bestiaire{--section-accent:var(--cat-bestiaire)}#galerie{--section-accent:var(--cat-galerie)}#fragments{--section-accent:var(--cat-fragments)}#auteur{--section-accent:var(--cat-auteur)}
+#univers .panel,#carte .panel,#personnages .panel,#bestiaire .panel,#galerie .panel,#fragments .panel,#auteur .panel{border-top:1px solid color-mix(in srgb,var(--section-accent) 32%,rgba(255,255,255,.06))}
+.character-family-nav{position:sticky;top:78px;z-index:20;display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.3rem;padding:.55rem;border-radius:22px;background:rgba(7,10,17,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08)}
+.character-family-nav a{padding:.5rem .75rem;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.075);color:var(--muted);text-decoration:none;font-size:.82rem;transition:.18s ease}
+.character-family-nav a:hover{color:var(--text);border-color:color-mix(in srgb,var(--cat-personnages) 44%,transparent);background:color-mix(in srgb,var(--cat-personnages) 16%,transparent);transform:translateY(-1px)}
+.catalog-group{scroll-margin-top:110px}.catalog-head{padding-top:.6rem;border-top:1px solid color-mix(in srgb,var(--cat-personnages) 22%,transparent)}
+@media (max-width: 920px){.visit-path,.gateway-grid-v30{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-visual,.hero-content{min-height:68vh}.character-family-nav{position:relative;top:auto}}
+@media (max-width: 620px){.visit-path,.gateway-grid-v30{grid-template-columns:1fr}.hero-card-v30{max-width:92vw}.hero-card-v30 .hero-actions{display:grid;grid-template-columns:1fr 1fr}.hero-card-v30 .hero-actions .btn{width:100%;justify-content:center}.hero-visual,.hero-content{min-height:70vh}}
+
 </style>
 </head>
 <body>
@@ -1415,33 +1453,40 @@ body::before{opacity:.55;background-size:72px 72px}
 <source src="assets/video/banniere-sylvinia.mp4" type="video/mp4"/>
 </video>
 <div class="hero-content">
-<div class="hero-card">
-<p class="eyebrow">Chroniqueur du monde de Sylvinia</p>
-<h1>Entrez dans les Chroniques de Sylvinia.</h1>
-<p class="lead">Explorez <strong>Sylvinia</strong> par grands chemins : univers, carte, personnages, bestiaire, fragments et scènes illustrées.</p>
-<div class="hero-actions clean-actions"><a class="btn primary" href="#univers">Découvrir l’univers</a><a class="btn" href="#carte">Explorer la carte</a><a class="btn violet" href="#personnages">Rencontrer les personnages</a><a class="btn" href="#galerie">Voir les illustrations</a></div>
-<p class="hero-note">Choisissez une porte d’entrée, puis laissez la chronique vous guider.</p>
+<div class="hero-card hero-card-v30">
+<p class="eyebrow">Le Chroniqueur Vagabond</p>
+<h1>Les Chroniques de Sylvinia.</h1>
+<p class="lead">Une porte d’entrée vers un monde de Lumière, d’Ombre et de lignées brisées.</p>
+<div class="hero-actions clean-actions"><a class="btn primary" href="#parcours">Commencer ici</a><a class="btn" href="#carte">Carte</a><a class="btn violet" href="#personnages">Personnages</a><a class="btn" href="#galerie">Illustrations</a></div>
+<p class="hero-note">Le reste de la bannière respire : laissez l’image poser l’ambiance, puis descendez dans les archives.</p>
 </div>
 </div>
 </div>
 </section>
-<div class="notice reveal">
-<div class="panel panel-pad"><p class="eyebrow">Dernière archive · v29</p><p style="margin:0">La refonte graphique allège l’accueil, réduit les cartes d’entrée, laisse respirer la bannière animée et ajoute un code couleur discret pour mieux distinguer les grandes catégories.</p></div>
+<section class="section section-portal" id="parcours">
+<div class="section-head reveal section-head-compact">
+<p class="eyebrow">Commencer ici</p>
+<h2>Un parcours simple pour ne pas se perdre dans les archives.</h2>
+<p class="lead">Quatre étapes suffisent pour comprendre Sylvinia avant d’ouvrir les portes plus profondes : monde, territoire, visages, images.</p>
+</div>
+<div class="visit-path reveal" aria-label="Itinéraire conseillé">
+<a href="#univers"><span>01</span><strong>Univers</strong><small>Les règles du monde</small></a>
+<a href="#carte"><span>02</span><strong>Carte</strong><small>Les lieux et tensions</small></a>
+<a href="#personnages"><span>03</span><strong>Personnages</strong><small>Les figures majeures</small></a>
+<a href="#galerie"><span>04</span><strong>Galerie</strong><small>Les scènes et fragments</small></a>
+</div>
+<div class="gateway-grid gateway-grid-v30 reveal">
+<a class="gateway-card" href="#univers"><span>✦</span><h3>Univers</h3><p>Cosmologie, forces magiques, factions et chronologie.</p></a>
+<a class="gateway-card" href="#carte"><span>⌖</span><h3>Carte</h3><p>Cités, régions et visuels associés.</p></a>
+<a class="gateway-card" href="#personnages"><span>♛</span><h3>Personnages</h3><p>Portraits, motivations et thèmes musicaux.</p></a>
+<a class="gateway-card" href="#galerie"><span>◈</span><h3>Illustrations</h3><p>Galerie, scènes cliquables et fragments.</p></a>
+</div>
+</section>
+
+<div class="notice reveal update-note-v30">
+<div class="panel panel-pad"><p class="eyebrow">Dernière archive · v30</p><p style="margin:0">La présentation guide désormais la visite : accueil plus léger, parcours conseillé, codes couleur renforcés et filtres de personnages plus visibles.</p></div>
 </div>
 
-<section class="section section-portal" id="parcours">
-<div class="section-head reveal">
-<p class="eyebrow">Parcours d’exploration</p>
-<h2>Quatre portes d’entrée, plus nettes et plus légères.</h2>
-<p class="lead">Le parcours sert de boussole : chaque carte mène à un pan précis des archives sans noyer la première visite.</p>
-</div>
-<div class="gateway-grid reveal">
-<a class="gateway-card" href="#univers"><span>✦</span><h3>Découvrir l’univers</h3><p>Cosmologie, forces magiques, chroniques, factions et chronologie.</p></a>
-<a class="gateway-card" href="#carte"><span>⌖</span><h3>Explorer la carte</h3><p>Les cités, régions et territoires avec leurs visuels associés.</p></a>
-<a class="gateway-card" href="#personnages"><span>♛</span><h3>Rencontrer les personnages</h3><p>Portraits, motivations, alliances, fractures et thèmes musicaux.</p></a>
-<a class="gateway-card" href="#galerie"><span>◈</span><h3>Voir les illustrations</h3><p>Galerie, scènes cliquables, fragments visuels et archives d’ambiance.</p></a>
-</div>
-</section>
 
 
 <section class="section" id="univers">
@@ -1608,7 +1653,15 @@ body::before{opacity:.55;background-size:72px 72px}
 </div>
 <div class="tags"><span>Sous-catégories</span><span>Portraits mis à jour</span><span>Motivations enrichies</span><span>Continuité conservée</span></div>
 </div>
-<div class="catalog-group">
+<nav class="character-family-nav reveal" aria-label="Filtrer les familles de personnages">
+<a href="#famille-empire">Empire</a>
+<a href="#famille-obscurcis">Obscurcis</a>
+<a href="#famille-miraldas">Mir’Aldas</a>
+<a href="#famille-humains">Humains</a>
+<a href="#famille-allies">Alliés Tome II</a>
+<a href="#famille-chaos">Chaos</a>
+</nav>
+<div class="catalog-group" id="famille-empire">
 <div class="catalog-head reveal">
 <div>
 <p class="eyebrow">Maison d’Al’Gratal</p>
@@ -1660,7 +1713,7 @@ body::before{opacity:.55;background-size:72px 72px}
 </article>
 </div>
 </div>
-<div class="catalog-group">
+<div class="catalog-group" id="famille-obscurcis">
 <div class="catalog-head reveal">
 <div>
 <p class="eyebrow">Forêt Interdite</p>
@@ -1712,7 +1765,7 @@ body::before{opacity:.55;background-size:72px 72px}
 </article>
 </div>
 </div>
-<div class="catalog-group">
+<div class="catalog-group" id="famille-miraldas">
 <div class="catalog-head reveal">
 <div>
 <p class="eyebrow">Cité des mages</p>
@@ -1775,7 +1828,7 @@ body::before{opacity:.55;background-size:72px 72px}
 </article>
 </div>
 </div>
-<div class="catalog-group">
+<div class="catalog-group" id="famille-humains">
 <div class="catalog-head reveal">
 <div>
 <p class="eyebrow">Mortels en résistance</p>
@@ -1814,7 +1867,7 @@ body::before{opacity:.55;background-size:72px 72px}
 </article>
 </div>
 </div>
-<div class="catalog-group">
+<div class="catalog-group" id="famille-allies">
 <div class="catalog-head reveal">
 <div>
 <p class="eyebrow">Sud et profondeur</p>
@@ -1853,7 +1906,7 @@ body::before{opacity:.55;background-size:72px 72px}
 </article>
 </div>
 </div>
-<div class="catalog-group">
+<div class="catalog-group" id="famille-chaos">
 <div class="catalog-head reveal">
 <div>
 <p class="eyebrow">Pactes et héritages noirs</p>
@@ -2516,7 +2569,7 @@ body::before{opacity:.55;background-size:72px 72px}
 <section class="section update-history" id="historique">
 <details>
 <summary>Historique discret des mises à jour</summary>
-<div class="update-history-list"><div class="update-history-item"><strong>v29 · Refonte graphique légère</strong><p>Accueil allégé, bannière animée plus visible, cartes d’entrée réduites, fond adouci et code couleur discret par grande catégorie.</p></div><div class="update-history-item"><strong>v28 · Refonte de présentation</strong><p>Navigation principale simplifiée, accueil allégé, ajout d’un parcours d’exploration, regroupement logique des archives de l’univers et déplacement des Fragments après la Galerie pour une lecture plus claire.</p></div><div class="update-history-item"><strong>v27 · Cinq temps forts ajoutés</strong><p>Ajout aux Scènes cliquables de Pont-Ardent, du pacte rouge entre Iriana et Valurn, de Naïah écrasant Allenna, de Tia face à Sarelia dans les Cellules Blanches et du concerto de sang d’Iriana à l’Athanor.</p></div><div class="update-history-item"><strong>v26 · Sélection finale des scènes</strong><p>Intégration au site de la sélection finale retenue : la chambre gelée de Hylee et Remerii, Mir’Aldas révélée, la présentation de Hylee devant les mages, Allenna à Akuhn’Nabad, Lineva au dernier rempart, la mémoire droganth des alliances et Naïah dans la Forêt Interdite.</p></div><div class="update-history-item"><strong>v25 · Nouvelle sélection de scènes</strong><p>Remplacement du cabinet des Scènes cliquables par la sélection retenue : Iriana, Amanéa, Hylee, le grand portail, les Tzekarii, le gorgon de la mer de sable et Naïah au conseil.</p></div><div class="update-history-item"><strong>v24 · Scènes intégrées à la galerie</strong><p>Déplacement des Scènes cliquables dans la Galerie d’illustrations, suppression de la catégorie séparée et conservation du voile anti-spoiler.</p></div><div class="update-history-item"><strong>v23 · Galerie restaurée</strong><p>Correction du titre de la galerie afin de supprimer le doublon avec le salon des Scènes cliquables.</p></div><div class="update-history-item"><strong>v21 · Scènes rangées par tome</strong><p>Réorganisation des scènes entre Tome I et Tome II, avec ajout d’un extrait scellé caché sous le voile anti-spoiler.</p></div><div class="update-history-item"><strong>v20 · Scènes cliquables &amp; voile anti-spoiler</strong><p>Ajout d’un cabinet de six scènes majeures, chacune ouvrable individuellement avec masquage des spoilers et révélation contrôlée.</p></div><div class="update-history-item"><strong>v18 · Fragments immersifs</strong><p>Renommage du fragment en <em>Meilleure qu’elle</em> et réécriture des textes de catégorie pour préserver l’immersion des archives.</p></div><div class="update-history-item"><strong>v18 · Fragment Naïah &amp; Hylee</strong><p>Ouverture du premier Fragment du Chroniqueur : image principale, musique intégrée, visions occultées et extrait narratif associé.</p></div>
+<div class="update-history-list"><div class="update-history-item"><strong>v30 · Guidage et respiration</strong><p>Accueil plus discret pour laisser vivre la bannière vidéo, parcours de visite conseillé, codes couleur accentués par catégorie et filtres rapides dans les personnages.</p></div><div class="update-history-item"><strong>v29 · Refonte graphique légère</strong><p>Accueil allégé, bannière animée plus visible, cartes d’entrée réduites, fond adouci et code couleur discret par grande catégorie.</p></div><div class="update-history-item"><strong>v28 · Refonte de présentation</strong><p>Navigation principale simplifiée, accueil allégé, ajout d’un parcours d’exploration, regroupement logique des archives de l’univers et déplacement des Fragments après la Galerie pour une lecture plus claire.</p></div><div class="update-history-item"><strong>v27 · Cinq temps forts ajoutés</strong><p>Ajout aux Scènes cliquables de Pont-Ardent, du pacte rouge entre Iriana et Valurn, de Naïah écrasant Allenna, de Tia face à Sarelia dans les Cellules Blanches et du concerto de sang d’Iriana à l’Athanor.</p></div><div class="update-history-item"><strong>v26 · Sélection finale des scènes</strong><p>Intégration au site de la sélection finale retenue : la chambre gelée de Hylee et Remerii, Mir’Aldas révélée, la présentation de Hylee devant les mages, Allenna à Akuhn’Nabad, Lineva au dernier rempart, la mémoire droganth des alliances et Naïah dans la Forêt Interdite.</p></div><div class="update-history-item"><strong>v25 · Nouvelle sélection de scènes</strong><p>Remplacement du cabinet des Scènes cliquables par la sélection retenue : Iriana, Amanéa, Hylee, le grand portail, les Tzekarii, le gorgon de la mer de sable et Naïah au conseil.</p></div><div class="update-history-item"><strong>v24 · Scènes intégrées à la galerie</strong><p>Déplacement des Scènes cliquables dans la Galerie d’illustrations, suppression de la catégorie séparée et conservation du voile anti-spoiler.</p></div><div class="update-history-item"><strong>v23 · Galerie restaurée</strong><p>Correction du titre de la galerie afin de supprimer le doublon avec le salon des Scènes cliquables.</p></div><div class="update-history-item"><strong>v21 · Scènes rangées par tome</strong><p>Réorganisation des scènes entre Tome I et Tome II, avec ajout d’un extrait scellé caché sous le voile anti-spoiler.</p></div><div class="update-history-item"><strong>v20 · Scènes cliquables &amp; voile anti-spoiler</strong><p>Ajout d’un cabinet de six scènes majeures, chacune ouvrable individuellement avec masquage des spoilers et révélation contrôlée.</p></div><div class="update-history-item"><strong>v18 · Fragments immersifs</strong><p>Renommage du fragment en <em>Meilleure qu’elle</em> et réécriture des textes de catégorie pour préserver l’immersion des archives.</p></div><div class="update-history-item"><strong>v18 · Fragment Naïah &amp; Hylee</strong><p>Ouverture du premier Fragment du Chroniqueur : image principale, musique intégrée, visions occultées et extrait narratif associé.</p></div>
 <div class="update-history-item"><strong>v16 · Auteur &amp; réseaux</strong><p>Refonte de la section Auteur avec présentation longue, liens officiels YouTube, TikTok et Instagram, et mise en forme adaptée au site.</p></div>
 <div class="update-history-item"><strong>v16 · Archives sonores complétées</strong><p>Ajout des thèmes d’Amanea, Iriana et Naïah, clarification de l’accueil et transformation des raccourcis d’accueil en liens fonctionnels.</p></div>
 <div class="update-history-item"><strong>v16 · Thèmes musicaux</strong><p>Ajout des boutons “Écouter son thème” dans les fiches personnages et d’un lecteur audio persistant en bas de page.</p></div>
