@@ -1423,11 +1423,14 @@ body{
 @media (max-width: 620px){.visit-path,.gateway-grid-v30{grid-template-columns:1fr}.hero-card-v30{max-width:92vw}.hero-card-v30 .hero-actions{display:grid;grid-template-columns:1fr 1fr}.hero-card-v30 .hero-actions .btn{width:100%;justify-content:center}.hero-visual,.hero-content{min-height:70vh}}
 
 
-/* v32 — Visual Novel bêta */
-.vn-beta-shell{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr);gap:1rem;align-items:stretch;overflow:hidden}
-.vn-beta-hero{position:relative;min-height:440px;background:#070b13;border-radius:calc(var(--radius) - 2px);overflow:hidden;border:1px solid rgba(216,182,109,.18)}
-.vn-beta-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.vn-beta-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,14,.18),rgba(5,8,14,.02) 44%,rgba(5,8,14,.46)),linear-gradient(180deg,rgba(5,8,14,.02),rgba(5,8,14,.55))}
+/* v33 — Visual Novel bêta, galerie cliquable */
+.vn-beta-shell{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(360px,.84fr);gap:1rem;align-items:stretch;overflow:hidden}
+.vn-beta-hero{position:relative;min-height:500px;background:#070b13;border-radius:calc(var(--radius) - 2px);overflow:hidden;border:1px solid rgba(216,182,109,.26);box-shadow:0 28px 70px rgba(0,0,0,.34)}
+.vn-beta-hero[data-lightbox]{cursor:zoom-in}
+.vn-beta-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease,filter .45s ease}
+.vn-beta-hero:hover img{transform:scale(1.025);filter:saturate(1.08)}
+.vn-beta-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,14,.16),rgba(5,8,14,.02) 46%,rgba(5,8,14,.52)),linear-gradient(180deg,rgba(5,8,14,.02),rgba(5,8,14,.58))}
+.vn-beta-hero::before{content:"Cliquer pour agrandir";position:absolute;right:1rem;bottom:1rem;z-index:2;padding:.45rem .75rem;border-radius:999px;border:1px solid rgba(216,182,109,.34);background:rgba(5,8,14,.72);color:var(--gold2);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;opacity:.88;backdrop-filter:blur(10px)}
 .vn-beta-copy{padding:1.45rem;display:flex;flex-direction:column;justify-content:center;gap:1rem}
 .vn-beta-copy h3{margin:.1rem 0 0;font-size:clamp(1.7rem,3.2vw,3rem);line-height:.95;font-family:Georgia,serif;color:var(--gold2)}
 .vn-beta-copy p{margin:0;line-height:1.72;color:var(--muted)}
@@ -1441,16 +1444,22 @@ body{
 .vn-feature span{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:999px;background:rgba(110,180,255,.14);color:var(--blue);font-weight:900;margin-bottom:.55rem}
 .vn-feature h4{margin:0 0 .35rem;color:var(--text);font-size:1rem}
 .vn-feature p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.55}
-.vn-beta-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1rem}
-.vn-beta-shot{position:relative;min-height:240px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:#060913;box-shadow:0 18px 42px rgba(0,0,0,.28)}
-.vn-beta-shot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.vn-beta-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,14,.92),rgba(5,8,14,.02) 62%)}
-.vn-beta-shot figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:1rem}
-.vn-beta-shot strong{display:block;color:var(--text)}
-.vn-beta-shot span{display:block;color:rgba(245,239,228,.82);font-size:.9rem;margin-top:.2rem}
-.vn-beta-shot.wide{grid-column:span 2}
-@media (max-width: 980px){.vn-beta-shell{grid-template-columns:1fr}.vn-beta-hero{min-height:320px}.vn-feature-grid,.vn-beta-gallery{grid-template-columns:1fr 1fr}.vn-beta-shot.wide{grid-column:span 2}}
-@media (max-width: 640px){.vn-feature-grid,.vn-beta-gallery{grid-template-columns:1fr}.vn-beta-shot,.vn-beta-shot.wide{grid-column:auto}.vn-beta-copy{padding:1rem}.vn-beta-hero{min-height:245px}}
+.vn-beta-gallery-intro{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin:1.7rem 0 .9rem;padding:.95rem 1rem;border:1px solid rgba(216,182,109,.16);border-radius:22px;background:linear-gradient(135deg,rgba(216,182,109,.08),rgba(110,180,255,.04))}
+.vn-beta-gallery-intro h3{margin:0;font-family:Georgia,serif;color:var(--gold2);font-size:clamp(1.35rem,2.2vw,2.1rem)}
+.vn-beta-gallery-intro p{margin:.25rem 0 0;color:var(--muted);line-height:1.55}.vn-beta-gallery-intro .hint{white-space:nowrap;color:var(--blue);font-weight:800;font-size:.9rem}
+.vn-beta-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem;margin-top:1rem;grid-auto-flow:dense}
+.vn-beta-shot{position:relative;min-height:260px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.11);background:#060913;box-shadow:0 18px 42px rgba(0,0,0,.30);cursor:zoom-in;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;isolation:isolate}
+.vn-beta-shot:hover,.vn-beta-shot:focus-visible{transform:translateY(-4px);border-color:rgba(216,182,109,.48);box-shadow:0 26px 60px rgba(0,0,0,.42),0 0 0 1px rgba(216,182,109,.08)}
+.vn-beta-shot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .45s ease,filter .45s ease}
+.vn-beta-shot:hover img,.vn-beta-shot:focus-visible img{transform:scale(1.035);filter:saturate(1.08) contrast(1.03)}
+.vn-beta-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,14,.94),rgba(5,8,14,.04) 62%);z-index:0}
+.vn-beta-shot::before{content:"Agrandir";position:absolute;top:.85rem;right:.85rem;z-index:2;padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(216,182,109,.26);background:rgba(5,8,14,.68);color:var(--gold2);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;opacity:0;transform:translateY(-4px);transition:.2s ease;backdrop-filter:blur(8px)}
+.vn-beta-shot:hover::before,.vn-beta-shot:focus-visible::before{opacity:1;transform:translateY(0)}
+.vn-beta-shot figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:1rem;background:linear-gradient(to top,rgba(5,8,14,.72),transparent)}
+.vn-beta-shot strong{display:block;color:var(--text);font-size:1.02rem}.vn-beta-shot span{display:block;color:rgba(245,239,228,.84);font-size:.9rem;margin-top:.2rem;line-height:1.45}
+.vn-beta-shot.wide{grid-column:span 6}.vn-beta-shot.featured{grid-column:span 7;min-height:390px}.vn-beta-shot.tall{grid-column:span 5;min-height:390px}.vn-beta-shot.compact{grid-column:span 4}
+@media (max-width: 980px){.vn-beta-shell{grid-template-columns:1fr}.vn-beta-hero{min-height:360px}.vn-feature-grid{grid-template-columns:1fr 1fr}.vn-beta-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.vn-beta-shot,.vn-beta-shot.wide,.vn-beta-shot.featured,.vn-beta-shot.tall,.vn-beta-shot.compact{grid-column:auto;min-height:280px}.vn-beta-shot.featured,.vn-beta-shot.tall{min-height:340px}.vn-beta-gallery-intro{align-items:start;flex-direction:column}}
+@media (max-width: 640px){.vn-feature-grid,.vn-beta-gallery{grid-template-columns:1fr}.vn-beta-copy{padding:1rem}.vn-beta-hero{min-height:255px}.vn-beta-hero::before{font-size:.7rem;right:.7rem;bottom:.7rem}.vn-beta-shot,.vn-beta-shot.featured,.vn-beta-shot.tall{min-height:240px}.vn-beta-gallery-intro .hint{white-space:normal}}
 
 </style>
 </head>
@@ -1516,7 +1525,7 @@ body{
 </section>
 
 <div class="notice reveal update-note-v30">
-<div class="panel panel-pad"><p class="eyebrow">Dernière archive · v32</p><p style="margin:0">Le Visual Novel est désormais présenté comme un jeu en version bêta, avec introduction et quatre chapitres disponibles, tout en conservant l’accès à la démo.</p></div>
+<div class="panel panel-pad"><p class="eyebrow">Dernière archive · v33</p><p style="margin:0">Le Visual Novel est désormais présenté comme un jeu en version bêta, avec introduction et quatre chapitres disponibles, tout en conservant l’accès à la démo.</p></div>
 </div>
 
 
@@ -2436,7 +2445,7 @@ body{
 <p class="lead">Le récit quitte les pages pour devenir une aventure jouable : une version bêta du Visual Novel est désormais disponible sur navigateur, avec l’introduction et quatre chapitres déjà accessibles.</p>
 </div>
 <article class="panel vn-beta-shell reveal">
-<div class="vn-beta-hero">
+<div aria-label="Agrandir l’affiche du Visual Novel" class="vn-beta-hero" data-lightbox="" role="button" tabindex="0">
 <img alt="Affiche du Visual Novel Les Chroniques de Sylvinia avec Hylee, Remerii, Iriana et Amanéa" src="assets/images/visual-novel/vn-beta-keyart.webp"/>
 </div>
 <div class="vn-beta-copy">
@@ -2454,13 +2463,17 @@ body{
 <div class="vn-feature"><span>03</span><h4>Codex vivant</h4><p>Images, musiques, entrées et encyclopédie se débloquent au fil des scènes.</p></div>
 <div class="vn-feature"><span>04</span><h4>Univers en expansion</h4><p>La bêta ouvre déjà l’introduction et quatre chapitres, avec la suite appelée à grandir.</p></div>
 </div>
+<div class="vn-beta-gallery-intro reveal">
+<div><h3>Aperçus du jeu</h3><p>Les images du Visual Novel sont désormais mises en avant comme une vraie galerie d’annonce.</p></div>
+<span class="hint">Cliquez sur une image pour l’agrandir</span>
+</div>
 <div class="vn-beta-gallery reveal">
-<figure class="vn-beta-shot wide"><img alt="Présentation promotionnelle du Visual Novel de Sylvinia" src="assets/images/visual-novel/vn-beta-emotion.webp"/><figcaption><strong>Un visual novel de fantasy riche en émotions</strong><span>Dialogues, exploration, tensions et révélations au fil du voyage.</span></figcaption></figure>
-<figure class="vn-beta-shot"><img alt="Visual Novel jouable sur mobile, tablette et ordinateur" src="assets/images/visual-novel/vn-beta-devices.webp"/><figcaption><strong>Jouable sur navigateur</strong><span>Mobile, tablette et ordinateur, sans installation.</span></figcaption></figure>
-<figure class="vn-beta-shot"><img alt="Interface du Visual Novel avec dialogue et choix" src="assets/images/visual-novel/vn-beta-interface.webp"/><figcaption><strong>Interface narrative</strong><span>Dialogues, choix, états et scènes illustrées.</span></figcaption></figure>
-<figure class="vn-beta-shot wide"><img alt="Sélection des chapitres, progression et codex du Visual Novel" src="assets/images/visual-novel/vn-beta-chapters.webp"/><figcaption><strong>Chapitre après chapitre</strong><span>Introduction, routes, progression et codex à débloquer.</span></figcaption></figure>
-<figure class="vn-beta-shot"><img alt="Progression, mémoire du voyage et codex du Visual Novel" src="assets/images/visual-novel/vn-beta-progression.webp"/><figcaption><strong>Suivez votre voyage</strong><span>Valeurs, inventaire, souvenirs, fragments et codex évoluent avec vos choix.</span></figcaption></figure>
-<figure class="vn-beta-shot wide"><img alt="Annonce de disponibilité du Visual Novel Les Chroniques de Sylvinia" src="assets/images/visual-novel/vn-beta-available.webp"/><figcaption><strong>Disponible dès à présent</strong><span>La bêta du Visual Novel est accessible en ligne.</span></figcaption></figure>
+<figure aria-label="Agrandir l’annonce de disponibilité du Visual Novel" class="vn-beta-shot featured" data-lightbox="" role="button" tabindex="0"><img alt="Annonce de disponibilité du Visual Novel Les Chroniques de Sylvinia" src="assets/images/visual-novel/vn-beta-available.webp"/><figcaption><strong>Disponible dès à présent</strong><span>La bêta du Visual Novel est accessible en ligne.</span></figcaption></figure>
+<figure aria-label="Agrandir la présentation émotionnelle du Visual Novel" class="vn-beta-shot tall" data-lightbox="" role="button" tabindex="0"><img alt="Présentation promotionnelle du Visual Novel de Sylvinia" src="assets/images/visual-novel/vn-beta-emotion.webp"/><figcaption><strong>Un visual novel de fantasy riche en émotions</strong><span>Dialogues, exploration, tensions et révélations au fil du voyage.</span></figcaption></figure>
+<figure aria-label="Agrandir l’interface narrative du Visual Novel" class="vn-beta-shot compact" data-lightbox="" role="button" tabindex="0"><img alt="Interface du Visual Novel avec dialogue et choix" src="assets/images/visual-novel/vn-beta-interface.webp"/><figcaption><strong>Interface narrative</strong><span>Dialogues, choix, états et scènes illustrées.</span></figcaption></figure>
+<figure aria-label="Agrandir la compatibilité navigateur du Visual Novel" class="vn-beta-shot compact" data-lightbox="" role="button" tabindex="0"><img alt="Visual Novel jouable sur mobile, tablette et ordinateur" src="assets/images/visual-novel/vn-beta-devices.webp"/><figcaption><strong>Jouable sur navigateur</strong><span>Mobile, tablette et ordinateur, sans installation.</span></figcaption></figure>
+<figure aria-label="Agrandir la sélection des chapitres du Visual Novel" class="vn-beta-shot compact" data-lightbox="" role="button" tabindex="0"><img alt="Sélection des chapitres, progression et codex du Visual Novel" src="assets/images/visual-novel/vn-beta-chapters.webp"/><figcaption><strong>Chapitre après chapitre</strong><span>Introduction, routes, progression et codex à débloquer.</span></figcaption></figure>
+<figure aria-label="Agrandir la progression du Visual Novel" class="vn-beta-shot wide" data-lightbox="" role="button" tabindex="0"><img alt="Progression, mémoire du voyage et codex du Visual Novel" src="assets/images/visual-novel/vn-beta-progression.webp"/><figcaption><strong>Suivez votre voyage</strong><span>Valeurs, inventaire, souvenirs, fragments et codex évoluent avec vos choix.</span></figcaption></figure>
 </div>
 </section>
 
@@ -2636,7 +2649,7 @@ body{
 <section class="section update-history" id="historique">
 <details>
 <summary>Historique discret des mises à jour</summary>
-<div class="update-history-list"><div class="update-history-item"><strong>v32 · Visual Novel bêta</strong><p>Refonte de la section Visual Novel : annonce du jeu complet en bêta, lien vers la version principale, conservation de la démo, galerie d’aperçus et note de transparence sur l’assistance IA.</p></div><div class="update-history-item"><strong>v31 · Visual Novel intégré</strong><p>Ajout d’une section dédiée au Visual Novel d’introduction, avec visuel d’aperçu, accès direct à la démo jouable et intégration dans le parcours du site.</p></div><div class="update-history-item"><strong>v30 · Guidage et respiration</strong><p>Accueil plus discret pour laisser vivre la bannière vidéo, parcours de visite conseillé, codes couleur accentués par catégorie et filtres rapides dans les personnages.</p></div><div class="update-history-item"><strong>v29 · Refonte graphique légère</strong><p>Accueil allégé, bannière animée plus visible, cartes d’entrée réduites, fond adouci et code couleur discret par grande catégorie.</p></div><div class="update-history-item"><strong>v28 · Refonte de présentation</strong><p>Navigation principale simplifiée, accueil allégé, ajout d’un parcours d’exploration, regroupement logique des archives de l’univers et déplacement des Fragments après la Galerie pour une lecture plus claire.</p></div><div class="update-history-item"><strong>v27 · Cinq temps forts ajoutés</strong><p>Ajout aux Scènes cliquables de Pont-Ardent, du pacte rouge entre Iriana et Valurn, de Naïah écrasant Allenna, de Tia face à Sarelia dans les Cellules Blanches et du concerto de sang d’Iriana à l’Athanor.</p></div><div class="update-history-item"><strong>v26 · Sélection finale des scènes</strong><p>Intégration au site de la sélection finale retenue : la chambre gelée de Hylee et Remerii, Mir’Aldas révélée, la présentation de Hylee devant les mages, Allenna à Akuhn’Nabad, Lineva au dernier rempart, la mémoire droganth des alliances et Naïah dans la Forêt Interdite.</p></div><div class="update-history-item"><strong>v25 · Nouvelle sélection de scènes</strong><p>Remplacement du cabinet des Scènes cliquables par la sélection retenue : Iriana, Amanéa, Hylee, le grand portail, les Tzekarii, le gorgon de la mer de sable et Naïah au conseil.</p></div><div class="update-history-item"><strong>v24 · Scènes intégrées à la galerie</strong><p>Déplacement des Scènes cliquables dans la Galerie d’illustrations, suppression de la catégorie séparée et conservation du voile anti-spoiler.</p></div><div class="update-history-item"><strong>v23 · Galerie restaurée</strong><p>Correction du titre de la galerie afin de supprimer le doublon avec le salon des Scènes cliquables.</p></div><div class="update-history-item"><strong>v21 · Scènes rangées par tome</strong><p>Réorganisation des scènes entre Tome I et Tome II, avec ajout d’un extrait scellé caché sous le voile anti-spoiler.</p></div><div class="update-history-item"><strong>v20 · Scènes cliquables &amp; voile anti-spoiler</strong><p>Ajout d’un cabinet de six scènes majeures, chacune ouvrable individuellement avec masquage des spoilers et révélation contrôlée.</p></div><div class="update-history-item"><strong>v18 · Fragments immersifs</strong><p>Renommage du fragment en <em>Meilleure qu’elle</em> et réécriture des textes de catégorie pour préserver l’immersion des archives.</p></div><div class="update-history-item"><strong>v18 · Fragment Naïah &amp; Hylee</strong><p>Ouverture du premier Fragment du Chroniqueur : image principale, musique intégrée, visions occultées et extrait narratif associé.</p></div>
+<div class="update-history-list"><div class="update-history-item"><strong>v33 · Galerie Visual Novel agrandie</strong><p>Les aperçus du Visual Novel deviennent cliquables, mieux hiérarchisés et présentés comme une vraie galerie d’annonce.</p></div><div class="update-history-item"><strong>v32 · Visual Novel bêta</strong><p>Refonte de la section Visual Novel : annonce du jeu complet en bêta, lien vers la version principale, conservation de la démo, galerie d’aperçus et note de transparence sur l’assistance IA.</p></div><div class="update-history-item"><strong>v31 · Visual Novel intégré</strong><p>Ajout d’une section dédiée au Visual Novel d’introduction, avec visuel d’aperçu, accès direct à la démo jouable et intégration dans le parcours du site.</p></div><div class="update-history-item"><strong>v30 · Guidage et respiration</strong><p>Accueil plus discret pour laisser vivre la bannière vidéo, parcours de visite conseillé, codes couleur accentués par catégorie et filtres rapides dans les personnages.</p></div><div class="update-history-item"><strong>v29 · Refonte graphique légère</strong><p>Accueil allégé, bannière animée plus visible, cartes d’entrée réduites, fond adouci et code couleur discret par grande catégorie.</p></div><div class="update-history-item"><strong>v28 · Refonte de présentation</strong><p>Navigation principale simplifiée, accueil allégé, ajout d’un parcours d’exploration, regroupement logique des archives de l’univers et déplacement des Fragments après la Galerie pour une lecture plus claire.</p></div><div class="update-history-item"><strong>v27 · Cinq temps forts ajoutés</strong><p>Ajout aux Scènes cliquables de Pont-Ardent, du pacte rouge entre Iriana et Valurn, de Naïah écrasant Allenna, de Tia face à Sarelia dans les Cellules Blanches et du concerto de sang d’Iriana à l’Athanor.</p></div><div class="update-history-item"><strong>v26 · Sélection finale des scènes</strong><p>Intégration au site de la sélection finale retenue : la chambre gelée de Hylee et Remerii, Mir’Aldas révélée, la présentation de Hylee devant les mages, Allenna à Akuhn’Nabad, Lineva au dernier rempart, la mémoire droganth des alliances et Naïah dans la Forêt Interdite.</p></div><div class="update-history-item"><strong>v25 · Nouvelle sélection de scènes</strong><p>Remplacement du cabinet des Scènes cliquables par la sélection retenue : Iriana, Amanéa, Hylee, le grand portail, les Tzekarii, le gorgon de la mer de sable et Naïah au conseil.</p></div><div class="update-history-item"><strong>v24 · Scènes intégrées à la galerie</strong><p>Déplacement des Scènes cliquables dans la Galerie d’illustrations, suppression de la catégorie séparée et conservation du voile anti-spoiler.</p></div><div class="update-history-item"><strong>v23 · Galerie restaurée</strong><p>Correction du titre de la galerie afin de supprimer le doublon avec le salon des Scènes cliquables.</p></div><div class="update-history-item"><strong>v21 · Scènes rangées par tome</strong><p>Réorganisation des scènes entre Tome I et Tome II, avec ajout d’un extrait scellé caché sous le voile anti-spoiler.</p></div><div class="update-history-item"><strong>v20 · Scènes cliquables &amp; voile anti-spoiler</strong><p>Ajout d’un cabinet de six scènes majeures, chacune ouvrable individuellement avec masquage des spoilers et révélation contrôlée.</p></div><div class="update-history-item"><strong>v18 · Fragments immersifs</strong><p>Renommage du fragment en <em>Meilleure qu’elle</em> et réécriture des textes de catégorie pour préserver l’immersion des archives.</p></div><div class="update-history-item"><strong>v18 · Fragment Naïah &amp; Hylee</strong><p>Ouverture du premier Fragment du Chroniqueur : image principale, musique intégrée, visions occultées et extrait narratif associé.</p></div>
 <div class="update-history-item"><strong>v16 · Auteur &amp; réseaux</strong><p>Refonte de la section Auteur avec présentation longue, liens officiels YouTube, TikTok et Instagram, et mise en forme adaptée au site.</p></div>
 <div class="update-history-item"><strong>v16 · Archives sonores complétées</strong><p>Ajout des thèmes d’Amanea, Iriana et Naïah, clarification de l’accueil et transformation des raccourcis d’accueil en liens fonctionnels.</p></div>
 <div class="update-history-item"><strong>v16 · Thèmes musicaux</strong><p>Ajout des boutons “Écouter son thème” dans les fiches personnages et d’un lecteur audio persistant en bas de page.</p></div>
@@ -2879,7 +2892,7 @@ const lightbox = document.querySelector('.lightbox');
 const lightboxImg = document.querySelector('[data-lightbox-img]');
 const lightboxCaption = document.querySelector('[data-lightbox-caption]');
 document.querySelectorAll('[data-lightbox]').forEach(card => {
-  card.addEventListener('click', () => {
+  const openCardLightbox = () => {
     const img = card.querySelector('img');
     const caption = card.querySelector('figcaption');
     if(!img) return;
@@ -2888,6 +2901,13 @@ document.querySelectorAll('[data-lightbox]').forEach(card => {
     lightboxCaption.textContent = caption ? caption.innerText.replace(/\s+/g,' ').trim() : img.alt;
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
+  };
+  card.addEventListener('click', openCardLightbox);
+  card.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      openCardLightbox();
+    }
   });
 });
 function closeLightbox(){
