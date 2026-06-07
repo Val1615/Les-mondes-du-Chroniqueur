@@ -1422,6 +1422,36 @@ body{
 @media (max-width: 920px){.visit-path,.gateway-grid-v30{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-visual,.hero-content{min-height:68vh}.character-family-nav{position:relative;top:auto}}
 @media (max-width: 620px){.visit-path,.gateway-grid-v30{grid-template-columns:1fr}.hero-card-v30{max-width:92vw}.hero-card-v30 .hero-actions{display:grid;grid-template-columns:1fr 1fr}.hero-card-v30 .hero-actions .btn{width:100%;justify-content:center}.hero-visual,.hero-content{min-height:70vh}}
 
+
+/* v32 — Visual Novel bêta */
+.vn-beta-shell{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr);gap:1rem;align-items:stretch;overflow:hidden}
+.vn-beta-hero{position:relative;min-height:440px;background:#070b13;border-radius:calc(var(--radius) - 2px);overflow:hidden;border:1px solid rgba(216,182,109,.18)}
+.vn-beta-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vn-beta-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,14,.18),rgba(5,8,14,.02) 44%,rgba(5,8,14,.46)),linear-gradient(180deg,rgba(5,8,14,.02),rgba(5,8,14,.55))}
+.vn-beta-copy{padding:1.45rem;display:flex;flex-direction:column;justify-content:center;gap:1rem}
+.vn-beta-copy h3{margin:.1rem 0 0;font-size:clamp(1.7rem,3.2vw,3rem);line-height:.95;font-family:Georgia,serif;color:var(--gold2)}
+.vn-beta-copy p{margin:0;line-height:1.72;color:var(--muted)}
+.vn-beta-badges{display:flex;flex-wrap:wrap;gap:.55rem}
+.vn-beta-badges .badge.beta{background:linear-gradient(135deg,rgba(216,182,109,.22),rgba(110,180,255,.16));border-color:rgba(216,182,109,.45);color:var(--gold2)}
+.vn-beta-actions{display:flex;flex-wrap:wrap;gap:.72rem;margin-top:.2rem}
+.vn-beta-note{border:1px solid rgba(216,182,109,.18);border-radius:20px;padding:1rem;background:rgba(216,182,109,.055)}
+.vn-beta-note strong{display:block;color:var(--gold2);margin-bottom:.35rem}
+.vn-feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+.vn-feature{padding:1rem;border-radius:20px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035)}
+.vn-feature span{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:999px;background:rgba(110,180,255,.14);color:var(--blue);font-weight:900;margin-bottom:.55rem}
+.vn-feature h4{margin:0 0 .35rem;color:var(--text);font-size:1rem}
+.vn-feature p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.55}
+.vn-beta-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1rem}
+.vn-beta-shot{position:relative;min-height:240px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:#060913;box-shadow:0 18px 42px rgba(0,0,0,.28)}
+.vn-beta-shot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.vn-beta-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,14,.92),rgba(5,8,14,.02) 62%)}
+.vn-beta-shot figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:1rem}
+.vn-beta-shot strong{display:block;color:var(--text)}
+.vn-beta-shot span{display:block;color:rgba(245,239,228,.82);font-size:.9rem;margin-top:.2rem}
+.vn-beta-shot.wide{grid-column:span 2}
+@media (max-width: 980px){.vn-beta-shell{grid-template-columns:1fr}.vn-beta-hero{min-height:320px}.vn-feature-grid,.vn-beta-gallery{grid-template-columns:1fr 1fr}.vn-beta-shot.wide{grid-column:span 2}}
+@media (max-width: 640px){.vn-feature-grid,.vn-beta-gallery{grid-template-columns:1fr}.vn-beta-shot,.vn-beta-shot.wide{grid-column:auto}.vn-beta-copy{padding:1rem}.vn-beta-hero{min-height:245px}}
+
 </style>
 </head>
 <body>
@@ -1481,12 +1511,12 @@ body{
 <a class="gateway-card" href="#carte"><span>⌖</span><h3>Carte</h3><p>Cités, régions et visuels associés.</p></a>
 <a class="gateway-card" href="#personnages"><span>♛</span><h3>Personnages</h3><p>Portraits, motivations et thèmes musicaux.</p></a>
 <a class="gateway-card" href="#galerie"><span>◈</span><h3>Illustrations</h3><p>Galerie, scènes cliquables et fragments.</p></a>
-<a class="gateway-card" href="#visual-novel"><span>▶</span><h3>Visual Novel</h3><p>L’introduction jouable de Sylvinia, accessible directement en ligne.</p></a>
+<a class="gateway-card" href="#visual-novel"><span>▶</span><h3>Visual Novel</h3><p>Le jeu en version bêta : introduction et quatre chapitres déjà disponibles.</p></a>
 </div>
 </section>
 
 <div class="notice reveal update-note-v30">
-<div class="panel panel-pad"><p class="eyebrow">Dernière archive · v31</p><p style="margin:0">Le Visual Novel d’introduction rejoint désormais le site : une section dédiée, un aperçu visuel et un accès direct vers la démo jouable en ligne.</p></div>
+<div class="panel panel-pad"><p class="eyebrow">Dernière archive · v32</p><p style="margin:0">Le Visual Novel est désormais présenté comme un jeu en version bêta, avec introduction et quatre chapitres disponibles, tout en conservant l’accès à la démo.</p></div>
 </div>
 
 
@@ -2402,26 +2432,36 @@ body{
 <section class="section" id="visual-novel">
 <div class="section-head reveal">
 <p class="eyebrow">Projet interactif</p>
-<h2>Visual Novel — Introduction jouable.</h2>
-<p class="lead">L’univers de <em>Sylvinia</em> peut désormais se découvrir aussi en format interactif. Cette démo met en scène les premiers pas de Hylee, sa rencontre avec Remerii et l’atmosphère de l’Auberge du Forestier à travers une expérience narrative jouable sur navigateur.</p>
+<h2>Les Chroniques de Sylvinia — Visual Novel.</h2>
+<p class="lead">Le récit quitte les pages pour devenir une aventure jouable : une version bêta du Visual Novel est désormais disponible sur navigateur, avec l’introduction et quatre chapitres déjà accessibles.</p>
 </div>
-<article class="panel vn-showcase reveal">
-<div class="vn-media">
-<img alt="Aperçu du Visual Novel : Remerii protège Hylee dans l’auberge du Forestier face au père d’Hylee, avec une magie bleue déployée" src="assets/images/visual-novel/intro-vn-hylee-remerii.png"/>
+<article class="panel vn-beta-shell reveal">
+<div class="vn-beta-hero">
+<img alt="Affiche du Visual Novel Les Chroniques de Sylvinia avec Hylee, Remerii, Iriana et Amanéa" src="assets/images/visual-novel/vn-beta-keyart.webp"/>
 </div>
-<div class="vn-copy">
-<div class="vn-badges"><span class="badge">Démo jouable</span><span class="badge">Introduction</span><span class="badge">Tome I</span><span class="badge">Version 0.25</span></div>
-<h3>Entrer dans l’Auberge du Forestier</h3>
-<p>Le Visual Novel propose une autre porte d’entrée vers les <strong>Chroniques de Sylvinia</strong> : dialogues, musiques, illustrations, choix et fins différentes. Il complète le site en donnant une forme vivante à l’ouverture du récit.</p>
-<ul class="vn-highlights">
-<li><span>01</span><div><strong>Une introduction immersive</strong><p>Une mise en scène centrée sur Hylee, Remerii et les premiers bouleversements magiques du Tome I.</p></div></li>
-<li><span>02</span><div><strong>Une lecture jouable</strong><p>Interface de visual novel, illustrations dédiées, ambiance sonore et progression narrative à choix.</p></div></li>
-<li><span>03</span><div><strong>Un accès direct</strong><p>La démo se lance en ligne, séparément du site principal, pour une consultation simple sur navigateur.</p></div></li>
-</ul>
-<div class="vn-actions"><a class="btn primary" href="https://val1615.github.io/IntroVNsylvinia/" rel="noopener" target="_blank">Lancer le Visual Novel</a><a class="btn" href="https://val1615.github.io/IntroVNsylvinia/" rel="noopener" target="_blank">Ouvrir dans un nouvel onglet</a></div>
-<p class="vn-note">Aperçu ci-dessus : Remerii s’interpose face au père d’Hylee, tandis que la magie bleue s’éveille dans l’auberge.</p>
+<div class="vn-beta-copy">
+<div class="vn-beta-badges"><span class="badge beta">Version bêta</span><span class="badge">Introduction</span><span class="badge">4 chapitres disponibles</span><span class="badge">Tome I</span><span class="badge">Navigateur</span></div>
+<h3>Jouer au Visual Novel</h3>
+<p><strong>Les Chroniques de Sylvinia</strong> peuvent maintenant se découvrir sous forme de Visual Novel : dialogues, choix narratifs, progression, codex, musiques, illustrations et embranchements accompagnent l’adaptation du Tome I.</p>
+<div class="vn-beta-actions"><a class="btn primary" href="https://val1615.github.io/SylviniaVN/" rel="noopener" target="_blank">Jouer maintenant</a><a class="btn" href="https://val1615.github.io/IntroVNsylvinia/" rel="noopener" target="_blank">Accéder à la démo</a></div>
+<p>La démo d’introduction reste accessible séparément pour découvrir l’ambiance de l’Auberge du Forestier et les premiers pas d’Hylee avant d’entrer dans l’aventure principale.</p>
+<div class="vn-beta-note"><strong>Note de création</strong><p>Afin de garantir une qualité visuelle et sonore ambitieuse tout en préservant une ligne éditoriale libre malgré un budget indépendant, la création du jeu est assistée par IA pour une partie des visuels, du code et de la musique. Le scénario, les personnages, l’univers de Sylvinia et le Tome I adapté dans ce Visual Novel restent issus de la plume et de l’imaginaire du Chroniqueur Vagabond.</p></div>
 </div>
 </article>
+<div class="vn-feature-grid reveal">
+<div class="vn-feature"><span>01</span><h4>Récit à choix</h4><p>Les décisions façonnent la progression, les dialogues et certains embranchements du voyage.</p></div>
+<div class="vn-feature"><span>02</span><h4>Progression persistante</h4><p>Valeurs, inventaire, souvenirs et fragments conservent les traces de l’aventure.</p></div>
+<div class="vn-feature"><span>03</span><h4>Codex vivant</h4><p>Images, musiques, entrées et encyclopédie se débloquent au fil des scènes.</p></div>
+<div class="vn-feature"><span>04</span><h4>Univers en expansion</h4><p>La bêta ouvre déjà l’introduction et quatre chapitres, avec la suite appelée à grandir.</p></div>
+</div>
+<div class="vn-beta-gallery reveal">
+<figure class="vn-beta-shot wide"><img alt="Présentation promotionnelle du Visual Novel de Sylvinia" src="assets/images/visual-novel/vn-beta-emotion.webp"/><figcaption><strong>Un visual novel de fantasy riche en émotions</strong><span>Dialogues, exploration, tensions et révélations au fil du voyage.</span></figcaption></figure>
+<figure class="vn-beta-shot"><img alt="Visual Novel jouable sur mobile, tablette et ordinateur" src="assets/images/visual-novel/vn-beta-devices.webp"/><figcaption><strong>Jouable sur navigateur</strong><span>Mobile, tablette et ordinateur, sans installation.</span></figcaption></figure>
+<figure class="vn-beta-shot"><img alt="Interface du Visual Novel avec dialogue et choix" src="assets/images/visual-novel/vn-beta-interface.webp"/><figcaption><strong>Interface narrative</strong><span>Dialogues, choix, états et scènes illustrées.</span></figcaption></figure>
+<figure class="vn-beta-shot wide"><img alt="Sélection des chapitres, progression et codex du Visual Novel" src="assets/images/visual-novel/vn-beta-chapters.webp"/><figcaption><strong>Chapitre après chapitre</strong><span>Introduction, routes, progression et codex à débloquer.</span></figcaption></figure>
+<figure class="vn-beta-shot"><img alt="Progression, mémoire du voyage et codex du Visual Novel" src="assets/images/visual-novel/vn-beta-progression.webp"/><figcaption><strong>Suivez votre voyage</strong><span>Valeurs, inventaire, souvenirs, fragments et codex évoluent avec vos choix.</span></figcaption></figure>
+<figure class="vn-beta-shot wide"><img alt="Annonce de disponibilité du Visual Novel Les Chroniques de Sylvinia" src="assets/images/visual-novel/vn-beta-available.webp"/><figcaption><strong>Disponible dès à présent</strong><span>La bêta du Visual Novel est accessible en ligne.</span></figcaption></figure>
+</div>
 </section>
 
 <section class="section" id="fragments">
@@ -2596,7 +2636,7 @@ body{
 <section class="section update-history" id="historique">
 <details>
 <summary>Historique discret des mises à jour</summary>
-<div class="update-history-list"><div class="update-history-item"><strong>v31 · Visual Novel intégré</strong><p>Ajout d’une section dédiée au Visual Novel d’introduction, avec visuel d’aperçu, accès direct à la démo jouable et intégration dans le parcours du site.</p></div><div class="update-history-item"><strong>v30 · Guidage et respiration</strong><p>Accueil plus discret pour laisser vivre la bannière vidéo, parcours de visite conseillé, codes couleur accentués par catégorie et filtres rapides dans les personnages.</p></div><div class="update-history-item"><strong>v29 · Refonte graphique légère</strong><p>Accueil allégé, bannière animée plus visible, cartes d’entrée réduites, fond adouci et code couleur discret par grande catégorie.</p></div><div class="update-history-item"><strong>v28 · Refonte de présentation</strong><p>Navigation principale simplifiée, accueil allégé, ajout d’un parcours d’exploration, regroupement logique des archives de l’univers et déplacement des Fragments après la Galerie pour une lecture plus claire.</p></div><div class="update-history-item"><strong>v27 · Cinq temps forts ajoutés</strong><p>Ajout aux Scènes cliquables de Pont-Ardent, du pacte rouge entre Iriana et Valurn, de Naïah écrasant Allenna, de Tia face à Sarelia dans les Cellules Blanches et du concerto de sang d’Iriana à l’Athanor.</p></div><div class="update-history-item"><strong>v26 · Sélection finale des scènes</strong><p>Intégration au site de la sélection finale retenue : la chambre gelée de Hylee et Remerii, Mir’Aldas révélée, la présentation de Hylee devant les mages, Allenna à Akuhn’Nabad, Lineva au dernier rempart, la mémoire droganth des alliances et Naïah dans la Forêt Interdite.</p></div><div class="update-history-item"><strong>v25 · Nouvelle sélection de scènes</strong><p>Remplacement du cabinet des Scènes cliquables par la sélection retenue : Iriana, Amanéa, Hylee, le grand portail, les Tzekarii, le gorgon de la mer de sable et Naïah au conseil.</p></div><div class="update-history-item"><strong>v24 · Scènes intégrées à la galerie</strong><p>Déplacement des Scènes cliquables dans la Galerie d’illustrations, suppression de la catégorie séparée et conservation du voile anti-spoiler.</p></div><div class="update-history-item"><strong>v23 · Galerie restaurée</strong><p>Correction du titre de la galerie afin de supprimer le doublon avec le salon des Scènes cliquables.</p></div><div class="update-history-item"><strong>v21 · Scènes rangées par tome</strong><p>Réorganisation des scènes entre Tome I et Tome II, avec ajout d’un extrait scellé caché sous le voile anti-spoiler.</p></div><div class="update-history-item"><strong>v20 · Scènes cliquables &amp; voile anti-spoiler</strong><p>Ajout d’un cabinet de six scènes majeures, chacune ouvrable individuellement avec masquage des spoilers et révélation contrôlée.</p></div><div class="update-history-item"><strong>v18 · Fragments immersifs</strong><p>Renommage du fragment en <em>Meilleure qu’elle</em> et réécriture des textes de catégorie pour préserver l’immersion des archives.</p></div><div class="update-history-item"><strong>v18 · Fragment Naïah &amp; Hylee</strong><p>Ouverture du premier Fragment du Chroniqueur : image principale, musique intégrée, visions occultées et extrait narratif associé.</p></div>
+<div class="update-history-list"><div class="update-history-item"><strong>v32 · Visual Novel bêta</strong><p>Refonte de la section Visual Novel : annonce du jeu complet en bêta, lien vers la version principale, conservation de la démo, galerie d’aperçus et note de transparence sur l’assistance IA.</p></div><div class="update-history-item"><strong>v31 · Visual Novel intégré</strong><p>Ajout d’une section dédiée au Visual Novel d’introduction, avec visuel d’aperçu, accès direct à la démo jouable et intégration dans le parcours du site.</p></div><div class="update-history-item"><strong>v30 · Guidage et respiration</strong><p>Accueil plus discret pour laisser vivre la bannière vidéo, parcours de visite conseillé, codes couleur accentués par catégorie et filtres rapides dans les personnages.</p></div><div class="update-history-item"><strong>v29 · Refonte graphique légère</strong><p>Accueil allégé, bannière animée plus visible, cartes d’entrée réduites, fond adouci et code couleur discret par grande catégorie.</p></div><div class="update-history-item"><strong>v28 · Refonte de présentation</strong><p>Navigation principale simplifiée, accueil allégé, ajout d’un parcours d’exploration, regroupement logique des archives de l’univers et déplacement des Fragments après la Galerie pour une lecture plus claire.</p></div><div class="update-history-item"><strong>v27 · Cinq temps forts ajoutés</strong><p>Ajout aux Scènes cliquables de Pont-Ardent, du pacte rouge entre Iriana et Valurn, de Naïah écrasant Allenna, de Tia face à Sarelia dans les Cellules Blanches et du concerto de sang d’Iriana à l’Athanor.</p></div><div class="update-history-item"><strong>v26 · Sélection finale des scènes</strong><p>Intégration au site de la sélection finale retenue : la chambre gelée de Hylee et Remerii, Mir’Aldas révélée, la présentation de Hylee devant les mages, Allenna à Akuhn’Nabad, Lineva au dernier rempart, la mémoire droganth des alliances et Naïah dans la Forêt Interdite.</p></div><div class="update-history-item"><strong>v25 · Nouvelle sélection de scènes</strong><p>Remplacement du cabinet des Scènes cliquables par la sélection retenue : Iriana, Amanéa, Hylee, le grand portail, les Tzekarii, le gorgon de la mer de sable et Naïah au conseil.</p></div><div class="update-history-item"><strong>v24 · Scènes intégrées à la galerie</strong><p>Déplacement des Scènes cliquables dans la Galerie d’illustrations, suppression de la catégorie séparée et conservation du voile anti-spoiler.</p></div><div class="update-history-item"><strong>v23 · Galerie restaurée</strong><p>Correction du titre de la galerie afin de supprimer le doublon avec le salon des Scènes cliquables.</p></div><div class="update-history-item"><strong>v21 · Scènes rangées par tome</strong><p>Réorganisation des scènes entre Tome I et Tome II, avec ajout d’un extrait scellé caché sous le voile anti-spoiler.</p></div><div class="update-history-item"><strong>v20 · Scènes cliquables &amp; voile anti-spoiler</strong><p>Ajout d’un cabinet de six scènes majeures, chacune ouvrable individuellement avec masquage des spoilers et révélation contrôlée.</p></div><div class="update-history-item"><strong>v18 · Fragments immersifs</strong><p>Renommage du fragment en <em>Meilleure qu’elle</em> et réécriture des textes de catégorie pour préserver l’immersion des archives.</p></div><div class="update-history-item"><strong>v18 · Fragment Naïah &amp; Hylee</strong><p>Ouverture du premier Fragment du Chroniqueur : image principale, musique intégrée, visions occultées et extrait narratif associé.</p></div>
 <div class="update-history-item"><strong>v16 · Auteur &amp; réseaux</strong><p>Refonte de la section Auteur avec présentation longue, liens officiels YouTube, TikTok et Instagram, et mise en forme adaptée au site.</p></div>
 <div class="update-history-item"><strong>v16 · Archives sonores complétées</strong><p>Ajout des thèmes d’Amanea, Iriana et Naïah, clarification de l’accueil et transformation des raccourcis d’accueil en liens fonctionnels.</p></div>
 <div class="update-history-item"><strong>v16 · Thèmes musicaux</strong><p>Ajout des boutons “Écouter son thème” dans les fiches personnages et d’un lecteur audio persistant en bas de page.</p></div>
